@@ -1,0 +1,34 @@
+package com.book.Bookstore.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.book.Bookstore.dao.BookRespository;
+import com.book.Bookstore.model.Book;
+
+import java.util.*;
+import com.book.Bookstore.model.*;
+import com.book.Bookstore.dao.*;
+
+@Service
+public class BookService {
+
+	@Autowired
+	BookRespository bookRepository;
+	
+	public List<Book> getAllBooks(){
+	   return bookRepository.findAll();	
+	}
+	
+	public Optional<Book> getBookById(Long id){
+		return bookRepository.findById(id);
+	}
+	
+	public Book saveBook(Book book){
+	   return  bookRepository.save(book);
+	}
+	
+	public void deleteBooks(Long id) {
+		bookRepository.deleteById(id);
+	}
+}

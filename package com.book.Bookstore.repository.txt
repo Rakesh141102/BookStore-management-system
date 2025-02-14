@@ -1,0 +1,7 @@
+package com.book.Bookstore.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.book.Bookstore.model.*;
+public interface BookRespository extends JpaRepository<Book,Long>{
+
+}
